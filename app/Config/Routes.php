@@ -24,6 +24,7 @@ $routes->post('/clientes/guardar', 'Cliente::registrarCliente');
 $routes->get('/clientes/eliminar/(:num)', 'Cliente::eliminar/$1');
 $routes->get('/clientes/buscar/', 'Cliente::buscar');
 $routes->get('clientes/buscar/(:num)', 'Cliente::buscar/$1');
+$routes->post('/clientes/actualizar', 'Cliente::actualizar');
 
 $routes->get('/productos', 'Producto::index');
 $routes->get('/productos/registrar', 'Producto::create');

@@ -44,7 +44,7 @@
 
 
 <script>
-    document.addEventListener(" DOMContentLoaded", () => {
+    document.addEventListener("DOMContentLoaded", () => {
         //Referencia
         const dataTable = document.querySelector("#content-table");
 
@@ -57,7 +57,7 @@
                 //recuperamos el data id-cliente
                 const idCliente = event.target.getAttribute("data-idcliente");
 
-                if (!confirm("¿Deseas eliminar el registro?")) {
+                if (confirm("¿Deseas eliminar el registro?")) {
 
                     //proceder a eliminar
                     window.location.href = "<?= base_url('clientes/eliminar/') ?>" + idCliente
