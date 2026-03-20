@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\ProveedorModel;
+use CodeIgniter\HTTP\RedirectResponse;
 
 class Proveedor extends BaseController
 {
@@ -36,6 +37,38 @@ class Proveedor extends BaseController
 
         return view('Modulos/proveedores/registrar', $data);
     }
+
+
+    
+    public function buscar(int $id = null)
+{
+    $cliente = new ProveedorModel();
+    $registro = $cliente->find($id);
+
+    $data = [
+        'header'   => view(name: 'Partials/header'),
+        'registro' => $registro,
+        'footer'   => view(name: 'Partials/footer'),
+    ];
+
+    return view('Modulos/proveedores/actualizar', $data);
+}
+
+public function actualizar(): RedirectResponse
+{
+    $cliente = new ProveedorModel();
+
+    $cliente->update($this->request->getPost('idproveedor'), [
+        'razonsocial' => $this->request->getPost('razonsocial'),
+        'direccion'   => $this->request->getPost('direccion'),
+        'ruc'          => $this->request->getPost('ruc'),
+        'telefono'     => $this->request->getPost('telefono'),
+        'representante' => $this->request->getPost('representante'),
+    ]);
+
+    return redirect()->to('/proveedores');
+}
+  
 
     public function registrarProveedor()
     {

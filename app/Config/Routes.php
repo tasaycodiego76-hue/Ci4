@@ -38,6 +38,10 @@ $routes->get('/proveedores', 'Proveedor::index');
 $routes->get('/proveedores/registrar', 'Proveedor::create');
 $routes->post('/proveedores/guardar', 'Proveedor::registrarProveedor');
 $routes->get('/proveedores/eliminar/(:num)', 'Proveedor::eliminar/$1');
+$routes->get('/proveedores/buscar/', 'Proveedor::buscar');
+$routes->get('proveedores/buscar/(:num)', 'Proveedor::buscar/$1');
+$routes->post('/proveedores/actualizar', 'Proveedor::actualizar');
+
 
 
 //reporte 
