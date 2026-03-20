@@ -19,12 +19,12 @@
 
             <div class="form-group">
                 <label for="ruc">RUC</label>
-                <input type="text" value="<?= $registro['ruc']?>" class="form-control" id="ruc" name="ruc" required>
+                <input type="text" value="<?= $registro['ruc']?>" class="form-control" id="ruc" name="ruc" minlength="11" maxlength="11"required>
             </div>
 
             <div class="form-group">
                 <label for="telefono">Teléfono</label>
-                <input type="number" value="<?= $registro['telefono']?>" class="form-control" id="telefono" name="telefono" required>
+                <input type="text" value="<?= $registro['telefono']?>" class="form-control" id="telefono" name="telefono" minlength="9" maxlength="9" required>
             </div>
             <div class="form-group">
                 <label for="representante">Representante</label>
